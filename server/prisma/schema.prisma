@@ -17,3 +17,30 @@ model Habit {
 
   @@map("habits")
 }
+
+model day {
+  id   String   @id @default(uuid())
+  date DateTime
+
+  @@unique([date])
+  @@map("days")
+}
+
+model habitWeekDays {
+  id      String @id @default(uuid())
+  habitId String
+  weekDay Int
+
+  @@unique([habitId, weekDay])
+  @@map("habit_week_days")
+}
+
+model dayHabit {
+  id String @id @default(uuid())
+
+  dayId   String @unique @map("day_id")
+  habitId String @unique @map("habit_id")
+
+  @@unique([dayId, habitId])
+  @@map("day_habit")
+}
