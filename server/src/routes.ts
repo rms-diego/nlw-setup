@@ -2,7 +2,11 @@ import { FastifyInstance } from "fastify";
 import { AppController } from "./controller/app.controller";
 
 export async function appRoutes(app: FastifyInstance) {
-  app.post("/habits", AppController.createHabit);
+  const appController = new AppController();
 
-  app.get("/day", AppController.getDay);
+  app.post("/habits", appController.createHabit);
+
+  app.get("/day", appController.getDay);
+
+  app.patch("/habits/:id/toggle", appController.toggleHabit);
 }
