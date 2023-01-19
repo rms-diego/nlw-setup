@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "db:reset": "prisma migrate reset"
+    "db:reset": "prisma migrate reset",
+    "build": "tsc",
+    "start": "npm run build && node dist/src/server.js"
   },
   "keywords": [],
   "author": "",

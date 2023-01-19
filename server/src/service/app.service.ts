@@ -71,6 +71,7 @@ export class AppService {
           id: dayHabit.id,
         },
       });
+      return;
     }
 
     await prisma.dayHabit.create({
