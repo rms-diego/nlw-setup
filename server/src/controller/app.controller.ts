@@ -26,4 +26,10 @@ export class AppController {
 
     return { message: "toggle completed" };
   }
+
+  static async summary() {
+    const summary = await AppService.summary();
+
+    return summary;
+  }
 }

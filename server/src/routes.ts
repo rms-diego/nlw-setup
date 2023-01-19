@@ -7,4 +7,6 @@ export async function appRoutes(app: FastifyInstance) {
   app.get("/day", AppController.getDay);
 
   app.patch("/habits/:id/toggle", AppController.toggleHabit);
+
+  app.get("/summary", AppController.summary);
 }
